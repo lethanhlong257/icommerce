@@ -1,0 +1,19 @@
+{
+  "name": "icommerce",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "DEBUG=icommerce:* nodemon ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "lodash": "^4.17.21",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.13",
+    "route-decorators": "^0.2.2",
+    "sequelize": "^6.6.5",
+    "winston": "^3.3.3"
+  }
+}
