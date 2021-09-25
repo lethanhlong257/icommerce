@@ -1,12 +1,13 @@
-const noop = require('lodash/noop')
-const _debug = require('debug')
-const config = require('../../config')
+import noop from 'lodash/noop';
+import _debug from 'debug';
+import * as config from '../../config'
 
 let _logDisabled = false;
 
 
-function create(ns) {
+export function create(ns) {
   const namespace = `${config.namespacePrefix}:${ns}`
+  console.log('namespace', namespace)
   const d = _debug(namespace);
 
   if (_logDisabled) {
@@ -24,6 +25,3 @@ function create(ns) {
   }
 }
 
-module.exports = {
-  create
-}

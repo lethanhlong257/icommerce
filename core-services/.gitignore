@@ -1,0 +1,23 @@
+.DS_Store
+.protoc-cache
+node_modules
+npm-debug.log
+test-results.xml
+coverage
+build
+docker/api/build
+docs/builder/markdown/*.html.md
+docs/builder/markdown/javascripts/env.js
+docs/html
+yarn-error.log
+docker/api-docs/html
+schema
+src/schema
+src/kobiton-dc
+.npmrc
+*.jar
+env.local.default.sh
+
+# vim
+*.sw[po] 
+.idea

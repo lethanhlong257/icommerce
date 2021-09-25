@@ -1,11 +1,15 @@
-const express = require('express');
+import express from 'express'
+import {create} from '../utils/debug'
+
 const router = express.Router();
-const {create} = require('../utils/debug');
 
 const debug = create('dev')
 /* GET users listing. */
 router.get('/', function(req, res, next) {
+  debug.log('name', 'do some thin')
   res.send('respond with a resource');
 });
 
-module.exports = router;
+
+export default router
+

@@ -1,0 +1,4 @@
+[submodule "core-services"]
+	path = schema
+	branch = master
+	url = git@github.com:kobiton/schema.git
