@@ -7,7 +7,7 @@ let _logDisabled = false;
 
 export function create(ns) {
   const namespace = `${config.namespacePrefix}:${ns}`
-  console.log('namespace', namespace)
+  
   const d = _debug(namespace);
 
   if (_logDisabled) {

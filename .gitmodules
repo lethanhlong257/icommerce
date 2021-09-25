@@ -1,0 +1,3 @@
+[submodule "api/src/services/core-services"]
+	path = api/src/services/core-services
+	url = https://github.com/lethanhlong257/core-services.git
