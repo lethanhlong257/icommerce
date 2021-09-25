@@ -13,7 +13,6 @@ yarn-error.log
 docker/api-docs/html
 schema
 src/schema
-src/kobiton-dc
 .npmrc
 *.jar
 env.local.default.sh
