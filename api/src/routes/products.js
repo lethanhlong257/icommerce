@@ -20,6 +20,52 @@ router.get('/', async function(req, res, next) {
   }
 })
 
+router.get('/filter', async function (req, res) {
+  const {name, minPrice, maxPrice, branch, color} = req.query
+
+  let result
+  try {
+    const {value} = await searchServiceGrpcClient.filterProduct({name, minPrice, maxPrice, branch, color})
+    if (value) {
+      result = JSON.parse(value)
+    }
+
+    res.json(result)
+  }
+  catch(error) {
+    debug.error(error)
+    res.status(HttpStatusCodes.INTERNAL_SERVER_ERROR).send(error)
+  }
+})
+
+router.get('/sort', async function (req, res) {
+  try {
+    let {sortBy = 'name', type = 'desc'} = req.query
+
+    const acceptableCriteria = [
+      'name', 'price', 'branch', 'color'
+    ]
+
+    if (acceptableCriteria.indexOf(sortBy) === -1) {
+      return res.status(HttpStatusCodes.BAD_REQUEST).send('sortBy should be in ' + JSON.stringify(acceptableCriteria))
+    }
+
+    if (!type.toLowerCase() === 'desc' || !type.toLowerCase() === 'asc') {
+      return res.status(HttpStatusCodes.BAD_REQUEST).send('type should be ASC or DESC')
+    }
+
+    const products = await db.Product.findAll({
+      order: [[sortBy, type]]
+    })
+
+    return res.json(products)
+  }
+  catch (error) {
+    debug.error(error)
+    res.status(HttpStatusCodes.INTERNAL_SERVER_ERROR).send(error)
+  }
+})
+
 router.get('/search', async function (req, res) {
   const {keyword} = req.query
   let result
@@ -28,14 +74,13 @@ router.get('/search', async function (req, res) {
     if (value) {
       result = JSON.parse(value)
     }
+
+    res.json(result)
   }
   catch(error) {
     debug.error(error)
     res.status(HttpStatusCodes.INTERNAL_SERVER_ERROR).send(error)
   }
-  
-  
-  res.json(result)
 })
 
 export default router

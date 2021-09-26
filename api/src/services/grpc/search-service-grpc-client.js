@@ -14,7 +14,6 @@ class SearchServiceRpcClient {
     this._grpcPort = searchService.port,
     this._grpcHost = searchService.host,
     this._packageDefinition = protoLoader.loadSync(servicePath)
-    this._searchProductRequest = grpc.loadPackageDefinition(this._packageDefinition).icommerce.SearchProductRequest
     this._searchServiceRpcClient = grpc.loadPackageDefinition(this._packageDefinition).icommerce.SearchServiceRpc
   }
 
@@ -28,7 +27,24 @@ class SearchServiceRpcClient {
       this._searchClient = BPromise.promisifyAll(rawSearchClient)
   }
 
-  async searchProduct(keyword= '') {
+  async filterProduct(options = {}) {
+    if (!this._searchClient) {
+      throw new Error('No gRPC client found')
+    }
+
+    try {
+      const searchResult = await this._searchClient.filterProductAsync(options)
+
+      return searchResult
+    }
+    catch (error) {
+      debug.error(
+        'Failed to search', error)
+      throw error
+    }
+  }
+
+  async searchProduct({keyword = ''}) {
     if (!this._searchClient) {
       throw new Error('No gRPC client found')
     }
