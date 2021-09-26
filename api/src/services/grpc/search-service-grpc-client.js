@@ -34,7 +34,7 @@ class SearchServiceRpcClient {
     }
 
     try {
-      const searchResult = await this._searchClient.searchProductAsync({keyword: 'name'})
+      const searchResult = await this._searchClient.searchProductAsync({keyword})
 
       return searchResult
     }

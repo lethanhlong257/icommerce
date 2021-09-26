@@ -19,7 +19,6 @@ export default class GRPCService {
                   logMessage: (...messages) => debug.log(functionKey, ...messages),
                   logError: (...errors) => debug.error(functionKey, ...errors)
                 })
-                console.log('call.request', call.request)
                 callback(null, response)
               }
               catch (error) {

@@ -22,8 +22,19 @@ router.get('/', async function(req, res, next) {
 
 router.get('/search', async function (req, res) {
   const {keyword} = req.query
-  const result = await searchServiceGrpcClient.searchProduct(keyword)
-
+  let result
+  try {
+    const {value} = await searchServiceGrpcClient.searchProduct(keyword)
+    if (value) {
+      result = JSON.parse(value)
+    }
+  }
+  catch(error) {
+    debug.error(error)
+    res.status(HttpStatusCodes.INTERNAL_SERVER_ERROR).send(error)
+  }
+  
+  
   res.json(result)
 })
 

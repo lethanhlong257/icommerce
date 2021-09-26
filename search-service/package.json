@@ -4,7 +4,7 @@
   "description": "search service ",
   "main": "index.js",
   "scripts": {
-    "start": "DEBUG=search-service nodemon --watch src --exec babel-node src/index.js",
+    "start": "DEBUG=search-service:* nodemon --watch src --exec babel-node --presets @babel/preset-env src/index.js",
     "update-sub": "git submodule sync; git submodule update --remote; cd src/services/core-services; npm install"
   },
   "author": "longle",
@@ -16,7 +16,8 @@
     "bluebird": "3.7.2",
     "google-protobuf": "3.13.0",
     "http-status-codes": "1.4.0",
-    "lodash": "4.17.20"
+    "lodash": "4.17.20",
+    "sequelize": "^6.6.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
