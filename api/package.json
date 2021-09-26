@@ -7,9 +7,7 @@
     "node": "14"
   },
   "scripts": {
-    "dev": "DEBUG=icommerce:* nodemon --exec babel-node --presets @babel/preset-env src/index.js",
-    "build": "npx babel --presets @babel/preset-env src --out-dir build",
-    "start": "npx babel --presets @babel/preset-env src --out-dir build && DEBUG=icommerce:* node ./build/index.js",
+    "start": "DEBUG=icommerce:* nodemon --exec babel-node --presets @babel/preset-env src/index.js",
     "update-sub": "git submodule sync; git submodule update --remote; cd src/services/core-services; npm install"
   },
   "dependencies": {
