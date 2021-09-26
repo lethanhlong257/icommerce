@@ -1,0 +1,19 @@
+{
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "10"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      ["@babel/plugin-syntax-export-default-from", {"legacy": true}],
+      ["@babel/plugin-proposal-decorators", {"legacy": true}],
+      ["@babel/plugin-proposal-class-properties", { "legacy": true }],
+      ["@babel/transform-runtime"]
+      
+    ]
+  }

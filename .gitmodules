@@ -2,3 +2,15 @@
 	path = api/src/services/core-services
 	url = https://github.com/lethanhlong257/core-services.git
 	branch = master
+[submodule "search-service/schema"]
+	path = search-service/schema
+	url = https://github.com/lethanhlong257/schema.git
+	branch = main
+[submodule "api/schema"]
+	path = api/schema
+	url = https://github.com/lethanhlong257/schema
+	branch = main
+[submodule "search-service/src/services/core-services"]
+	path = search-service/src/services/core-services
+	url = https://github.com/lethanhlong257/core-services.git
+	branch = master

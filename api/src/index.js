@@ -8,6 +8,7 @@ import app from './app'
 import log from 'debug'
 import http from 'http'
 import {API_PORT, namespacePrefix} from './config'
+import SearchServiceRpcClient from './services/grpc/search-service-grpc-client'
 
 const debug = log.debug(`${namespacePrefix}:server`)
 /**
@@ -79,14 +80,21 @@ function onError(error) {
   }
 }
 
+async function registerGRPCService() {
+  debug('registerGRPCService ...')
+  await SearchServiceRpcClient.init()
+}
+
 /**
  * Event listener for HTTP server "listening" event.
  */
 
-function onListening() {
+async function onListening() {
   const addr = server.address();
   const bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+
+  await registerGRPCService()
 }
