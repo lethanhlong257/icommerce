@@ -1,0 +1,4 @@
+{
+  "action": "GET /v1/products",
+  "data": {}
+}
