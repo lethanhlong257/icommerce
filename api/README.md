@@ -61,5 +61,3 @@ api
      |- config.js #file config for api service
 
 ```
-
-![Diagram](/Users/longle/Desktop/icommerce.png)
