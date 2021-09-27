@@ -39,7 +39,7 @@ curl --location --request GET 'http://localhost:3000/v1/products'
 ## 3. Launch in local
 
 - Install dependencies ```npm install```
-- Run ```npm run update-sub``` to update the submodule ([schema](https://github.com/lethanhlong257/schema/blob/b99d288a9ded25d3ffae7f4376eb0bb0907254d9/README.md) and [core-service](https://github.com/lethanhlong257/core-services/blob/18d27c12227f79b496477c529d11dfe4fd4e1c68/README.md))
+- Run ```npm run update-sub``` to update the submodule ([schema](https://github.com/lethanhlong257/schema) and [core-service](https://github.com/lethanhlong257/core-services)
 - Run ```npm run start``` to launch the api service
 - Run ```npm run test``` to execute the test
 
