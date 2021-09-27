@@ -1,7 +1,7 @@
 # iCommerce
 
 ## 1. Overview
-
+- This project tends to microservice system
 - This project have 2 services (using grpc to communicate) and 2 submodule (to reuse code)
 
 - **Submodules:**
