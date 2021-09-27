@@ -11,3 +11,6 @@
 - **Services:**
   - [API](https://github.com/lethanhlong257/icommerce/blob/master/api/README.md)
   - [Search-service](https://github.com/lethanhlong257/icommerce/blob/master/search-service/README.md)
+
+
+![Diagram](/Users/longle/Desktop/icommerce.png)
