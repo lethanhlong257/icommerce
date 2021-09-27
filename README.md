@@ -13,4 +13,4 @@
   - [Search-service](https://github.com/lethanhlong257/icommerce/blob/master/search-service/README.md)
 
 
-![Diagram](/Users/longle/Desktop/icommerce.png)
+![Diagram](https://github.com/lethanhlong257/icommerce/blob/master/icommerce.png)
