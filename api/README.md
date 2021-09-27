@@ -32,7 +32,7 @@ curl --location --request GET 'http://localhost:3000/v1/products'
 
 ## 2. Setup development
 
-- Require setup [Database](https://github.com/lethanhlong257/core-services/blob/18d27c12227f79b496477c529d11dfe4fd4e1c68/README.md) before to launch
+- Require setup [Database](https://github.com/lethanhlong257/core-services) before to launch
 - Dependencies: [search-service](https://github.com/lethanhlong257/icommerce/blob/master/search-service/README.md)
 - Use node 14.15.1 for launch on MACOS
 
